@@ -1906,8 +1906,8 @@ News search: All Articles: entity mentioned at least once in the article"""
         st.dataframe(dataframes_to_download[selected_dataframe])
 
     # Load the image files
-    img_path = r"New logo snip.PNG"
-    img_path1 = r"New Templete main slide.PNG"
+    img_path = r"New logo snip.png"
+    img_path1 = r"New Templete main slide.png"
 
     # Create a new PowerPoint presentation with widescreen dimensions
     prs = Presentation()               
