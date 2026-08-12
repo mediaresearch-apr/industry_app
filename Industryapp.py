@@ -1219,7 +1219,7 @@ if file:
         # st.write(data)
 
         # Data preprocessing
-        # data.drop(columns=data.columns[20:], axis=1, inplace=True)
+        # data.drop(columns=data.columns[20:], inplace=True)
         # Process columns as required
      #    existing_columns = data.columns.tolist()
      #    influencer_index = existing_columns.index('Influencer')
