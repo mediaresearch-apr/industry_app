@@ -1136,6 +1136,10 @@ def clean_text(text):
     
 # Function to generate word cloud
 def generate_word_cloud(df):
+     # Guard against duplicate column names collapsing df['Headline'] into a DataFrame
+    headline_series = df['Headline']
+    if isinstance(headline_series, pd.DataFrame):
+        headline_series = headline_series.iloc[:, 0]  # take the first Headline column
     text = ' '.join(df['Headline'].astype(str))
     text = clean_text(text)  # Clean the text
     stopwords = set(STOPWORDS)
