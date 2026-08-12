@@ -1408,6 +1408,7 @@ if file:
         # Journalist Table
         finaldata['Journalist'] = finaldata['Journalist'].str.split(',')
         finaldata = finaldata.explode('Journalist')
+        finaldata = finaldata.reset_index(drop=True)
         jr_tab = pd.crosstab(finaldata['Journalist'], finaldata['Entity'])
         jr_tab = jr_tab.reset_index(level=0)
         newdata = finaldata[['Journalist', 'Publication Name']]
