@@ -1233,7 +1233,7 @@ if file:
      #    existing_columns[influencer_index + 1:country_index + 1]  # All columns between 'Influencer' and 'Country'
      # )
      #    data = data[new_order]
-        data.drop(columns=data.columns[20:], axis=1, inplace=True)
+        data.drop(columns=data.columns[20:], inplace=True)
         data['Influencer'] = data['Influencer'].fillna('Bureau News')
         data = data.rename({'Influencer': 'Journalist'}, axis=1)
         # data.drop_duplicates(subset=['Date', 'Entity', 'Headline', 'Publication Name'], keep='first', inplace=True)
