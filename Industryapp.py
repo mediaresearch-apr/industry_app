@@ -1139,8 +1139,8 @@ def generate_word_cloud(df):
      # Guard against duplicate column names collapsing df['Headline'] into a DataFrame
     headline_series = df['Headline']
     if isinstance(headline_series, pd.DataFrame):
-        headline_series = headline_series.iloc[:, 0]  # take the first Headline column
-    text = ' '.join(df['Headline'].astype(str))
+        headline_series = headline_series.iloc[:, 0]  # take the first Headline colum
+    text = ' '.join(headline_series.dropna().astype(str)) 
     text = clean_text(text)  # Clean the text
     stopwords = set(STOPWORDS)
     wordcloud = WordCloud(stopwords=stopwords, background_color="white" ,width=550,
